@@ -57,19 +57,25 @@ spec:
             - name: AUTH_METHOD
               value: saml2
             - name: AUTH_AUTO_INITIATE
-              value: false
+              value: {{ default "true" .Values.saml2.auth_auto_initiate | quote }}
             - name: SAML2_NAME
-              value: SSO
+              value: {{ default "SSO" .Values.saml2.saml2_name | quote }}
             - name: SAML2_EMAIL_ATTRIBUTE
-              value: email
+              value: {{ default "email" .Values.saml2.saml2_email_attribute | quote }}
             - name: SAML2_EXTERNAL_ID_ATTRIBUTE
-              value: uid
+              value: {{ default "uid" .Values.saml2.saml2_external_id_attribute | quote }}
             - name: SAML2_DISPLAY_NAME_ATTRIBUTES
-              value: username
+              value: {{ default "username" .Values.saml2.saml2_display_name_attributes | quote }}
             - name: SAML2_IDP_ENTITYID
               value: {{ .Values.saml2.saml2_idp_entityid | quote }}
             - name: SAML2_AUTOLOAD_METADATA
-              value: false
+              value: {{ default "true" .Values.saml2.saml2_idp_entityid | quote }}
+            - name: SAML2_IDP_SSO
+              value: {{ default "" .Values.saml2.saml2_idp_sso | quote }}
+            - name: SAML2_IDP_SLO
+              value: {{ default "" .Values.saml2.saml2_idp_slo | quote }}
+            - name: SAML2_IDP_AUTHNCONTEXT
+              value: {{ default "true" .Values.saml2.saml2_idp_authncontext | quote }}
           {{- end }}
           {{- if .Values.mariadb.enabled }}
             - name: DB_HOST

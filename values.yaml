@@ -176,4 +176,14 @@ ldap:
 ## Enable saml 2.0 authentication. See https://www.bookstackapp.com/docs/admin/saml2-auth/ for details on how to set it up.
 saml2:
   enabled: false
+  auth_auto_initiate:
+  saml2_name:
+  saml2_email_attribute:
+  saml2_external_id_attribute:
+  saml2_display_name_attributes:
   saml2_idp_entityid:
+  saml2_autoload_metadata:
+  saml2_idp_sso:
+  saml2_idp_slo:
+  saml2_idp_x509:
+  saml2_idp_authncontext:

@@ -96,7 +96,17 @@ The following table lists the configurable parameters of the Redmine chart and t
 | `ldap.userFilter`                    | A filter to use when searching for users | `nil` |
 | `ldap.version`                    | Set the LDAP version to use when connecting to the server. Required especially when using AD. | `nil` |
 | `saml2.enabled`                    | Enable or disable SAML 2.0 authentication. [See official docs for details](https://www.bookstackapp.com/docs/admin/saml2-auth/) | `false` |
+| `auth_auto_initiate` | Enable auto-initiation | `true` |
+| `saml2_name` | Set the display name to be shown on the login button |  `SSO` |
+| `saml2_email_attribute` | Name of the attribute which provides the user's email address | `email` |
+| `saml2_external_id_attribute` | Name of the attribute to use as an ID for the SAML user | `uid` |
+| `saml2_display_name_attributes` | Name of the attribute(s) to use for the user's display name | `username` |
 | `saml2_idp_entityid`               | Identity Provider entityID URL | `nil` |
+| `saml2_autoload_metadata` | Auto-load metadata from the IDP | `true` |
+| `saml2_idp_sso` | Identity Provider single-sign-on service URL | `nil` |
+| `saml2_idp_slo` | Identity Provider single-logout-service URL | `nil` |
+| `saml2_idp_x509` | Identity Provider x509 public certificate data | `nil` |
+| `saml2_idp_authncontext` | Identity Provider AuthnContext | `true` |
 
 The above parameters map to the env variables defined in the [Bookstack image](https://hub.docker.com/r/solidnerd/bookstack/) and the MariaDB/MySQL database settings. For more information please refer to the [Bookstack](https://hub.docker.com/r/solidnerd/bookstack/) image documentation.
 
