@@ -53,6 +53,24 @@ spec:
             - name: LDAP_VERSION
               value: {{ .Values.ldap.version | quote }}
           {{- end }}
+          {{- if .Values.saml2.enabled }}
+            - name: AUTH_METHOD
+              value: saml2
+            - name: AUTH_AUTO_INITIATE
+              value: false
+            - name: SAML2_NAME
+              value: SSO
+            - name: SAML2_EMAIL_ATTRIBUTE
+              value: email
+            - name: SAML2_EXTERNAL_ID_ATTRIBUTE
+              value: uid
+            - name: SAML2_DISPLAY_NAME_ATTRIBUTES
+              value: username
+            - name: SAML2_IDP_ENTITYID
+              value: {{ .Values.saml2.saml2_idp_entityid | quote }}
+            - name: SAML2_AUTOLOAD_METADATA
+              value: false
+          {{- end }}
           {{- if .Values.mariadb.enabled }}
             - name: DB_HOST
               value: {{ template "bookstack.mariadb.fullname" . }}

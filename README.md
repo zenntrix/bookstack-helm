@@ -45,7 +45,7 @@ The command removes all the Kubernetes components associated with the chart and 
 
 The following table lists the configurable parameters of the Redmine chart and their default values.
 
-|            Parameter              |              Description                 |                          Default                        | 
+|            Parameter              |              Description                 |                          Default                        |
 | --------------------------------- | ---------------------------------------- | ------------------------------------------------------- |
 | `env`                             | additional env variables                 | `{}`                                                     |
 | `replicaCount`                    | Number of replicas to start              | `1`                                                     |
@@ -95,6 +95,8 @@ The following table lists the configurable parameters of the Redmine chart and t
 | `ldap.pass`                    | Password of user performing search queries.  | `nil` |
 | `ldap.userFilter`                    | A filter to use when searching for users | `nil` |
 | `ldap.version`                    | Set the LDAP version to use when connecting to the server. Required especially when using AD. | `nil` |
+| `saml2.enabled`                    | Enable or disable SAML 2.0 authentication. [See official docs for details](https://www.bookstackapp.com/docs/admin/saml2-auth/) | `false` |
+| `saml2_idp_entityid`               | Identity Provider entityID URL | `nil` |
 
 The above parameters map to the env variables defined in the [Bookstack image](https://hub.docker.com/r/solidnerd/bookstack/) and the MariaDB/MySQL database settings. For more information please refer to the [Bookstack](https://hub.docker.com/r/solidnerd/bookstack/) image documentation.
 

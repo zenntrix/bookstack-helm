@@ -172,3 +172,8 @@ ldap:
   pass:
   userFilter:
   version:
+
+## Enable saml 2.0 authentication. See https://www.bookstackapp.com/docs/admin/saml2-auth/ for details on how to set it up.
+saml2:
+  enabled: false
+  saml2_idp_entityid:
