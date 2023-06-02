@@ -34,7 +34,7 @@ spec:
             service:
               name: {{ $fullName }}
               port: 
-                number: http
+                number: 80
           path: {{ $ingressPath }}
           pathType: ImplementationSpecific
   {{- end }}
