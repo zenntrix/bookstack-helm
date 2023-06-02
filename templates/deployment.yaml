@@ -88,7 +88,7 @@ spec:
               valueFrom:
                 secretKeyRef:
                   name: {{ template "bookstack.mariadb.fullname" . }}
-                  key: mariadb-password
+                  key: mariadb-root-password
           {{- else }}
             - name: DB_HOST
               value: {{ .Values.externalDatabase.host | quote }}
