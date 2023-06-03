@@ -37,6 +37,8 @@ spec:
               path: /
               port: http
           env:
+            - name: APP_URL
+              value: {{ .Values.url | quote }}
           {{- if .Values.ldap.enabled }}
             - name: AUTH_METHOD
               value: ldap
